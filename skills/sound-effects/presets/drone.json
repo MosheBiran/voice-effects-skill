@@ -1,0 +1,107 @@
+{
+  "id": "drone",
+  "family": "texture",
+  "name": "Tension drone",
+  "he": "דרון מתח",
+  "use": "Bed under a dramatic intro, mystery, 'before' state, slow establishing shot.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.5,
+    "hint": "darker, more sub, wider space",
+    "time": 1.2,
+    "pitch": -3,
+    "low_db": 8
+  },
+  "space": {
+    "size": 2.8,
+    "mix": 0.4,
+    "damp": 0.6
+  },
+  "width": 1.2,
+  "layers": [
+    {
+      "name": "pad",
+      "role": "tone",
+      "type": "osc",
+      "wave": "saw",
+      "voices": 6,
+      "detune": 14,
+      "spread": 1.0,
+      "f0": 55,
+      "filter": {
+        "type": "lowpass",
+        "f0": 420,
+        "q": 1.5,
+        "lfo": {
+          "rate": 0.18,
+          "depth": 1.0
+        }
+      },
+      "env": {
+        "a": 1.0,
+        "h": 2.0,
+        "d": 2.2,
+        "ac": 1.5,
+        "dc": 1.5
+      },
+      "gain": 0.6
+    },
+    {
+      "name": "fifth",
+      "role": "tone",
+      "type": "osc",
+      "wave": "triangle",
+      "f0": 82.4,
+      "env": {
+        "a": 1.2,
+        "h": 1.8,
+        "d": 2.0,
+        "ac": 1.5,
+        "dc": 1.5
+      },
+      "gain": 0.25
+    },
+    {
+      "name": "air",
+      "role": "air",
+      "type": "noise",
+      "color": "pink",
+      "stereo": true,
+      "filter": {
+        "type": "bandpass",
+        "f0": 900,
+        "q": 2.5,
+        "lfo": {
+          "rate": 0.11,
+          "depth": 1.2
+        }
+      },
+      "env": {
+        "a": 1.5,
+        "h": 1.5,
+        "d": 2.0,
+        "dc": 1.5
+      },
+      "gain": 0.25
+    },
+    {
+      "name": "sub",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 27.5,
+      "env": {
+        "a": 1.5,
+        "h": 1.5,
+        "d": 2.0,
+        "dc": 1.5
+      },
+      "gain": 0.4
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "glitch",
+  "family": "glitch",
+  "name": "Glitch stutter",
+  "he": "גליץ'",
+  "use": "Digital/tech transitions, data/AI screens, jump cuts, broken-signal or error moments.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.4,
+    "hint": "lower, chunkier glitch with more body",
+    "time": 1.25,
+    "pitch": -5,
+    "low_db": 6
+  },
+  "space": {
+    "size": 0.4,
+    "mix": 0.08,
+    "damp": 0.3
+  },
+  "echo": {
+    "time": 0.06,
+    "fb": 0.3,
+    "mix": 0.2
+  },
+  "layers": [
+    {
+      "name": "buzz",
+      "role": "body",
+      "type": "osc",
+      "wave": "square",
+      "f0": 220,
+      "lfo": [
+        {
+          "target": "freq",
+          "shape": "random",
+          "rate": 22,
+          "depth": 24,
+          "smooth": 0.0
+        },
+        {
+          "target": "amp",
+          "shape": "random",
+          "rate": 28,
+          "depth": 1.0,
+          "smooth": 0.0
+        }
+      ],
+      "env": {
+        "a": 0.001,
+        "h": 0.05,
+        "d": 0.55,
+        "dc": 1.2
+      },
+      "gain": 0.5,
+      "crush": 4,
+      "hold": 6
+    },
+    {
+      "name": "noise",
+      "role": "air",
+      "type": "noise",
+      "color": "white",
+      "lfo": {
+        "target": "amp",
+        "shape": "square",
+        "rate": 19,
+        "depth": 1.0,
+        "duty": 0.3
+      },
+      "filter": {
+        "type": "bandpass",
+        "f0": 3000,
+        "q": 0.7
+      },
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.5,
+        "dc": 1.2
+      },
+      "gain": 0.4,
+      "hold": 3
+    },
+    {
+      "name": "thump",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 120,
+      "f1": 60,
+      "ft": 0.05,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.08,
+        "dc": 3
+      },
+      "gain": 0.5
+    }
+  ]
+}

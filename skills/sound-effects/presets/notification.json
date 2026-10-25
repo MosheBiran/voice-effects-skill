@@ -1,0 +1,89 @@
+{
+  "id": "notification",
+  "family": "chime",
+  "name": "Notification chime",
+  "he": "צליל התראה",
+  "use": "Message/notification on screen, success, checkmark, positive highlight, price tag.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.35,
+    "hint": "longer ring and a bigger room",
+    "time": 1.35,
+    "pitch": 0,
+    "low_db": 3
+  },
+  "space": {
+    "size": 1.2,
+    "mix": 0.22,
+    "damp": 0.4
+  },
+  "layers": [
+    {
+      "name": "note1",
+      "role": "tone",
+      "type": "fm",
+      "f0": 1318.5,
+      "ratio": 3.5,
+      "index": 1.5,
+      "idecay": 0.25,
+      "env": {
+        "a": 0.002,
+        "h": 0.0,
+        "d": 0.9,
+        "dc": 2.5
+      },
+      "gain": 0.6
+    },
+    {
+      "name": "note2",
+      "role": "tone",
+      "type": "fm",
+      "f0": 1975.5,
+      "ratio": 3.5,
+      "index": 1.5,
+      "idecay": 0.25,
+      "env": {
+        "a": 0.002,
+        "h": 0.0,
+        "d": 1.1,
+        "dc": 2.5
+      },
+      "gain": 0.6,
+      "delay": 0.11
+    },
+    {
+      "name": "body1",
+      "role": "tone",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 659.25,
+      "env": {
+        "a": 0.002,
+        "h": 0.0,
+        "d": 0.6,
+        "dc": 2.5
+      },
+      "gain": 0.3
+    },
+    {
+      "name": "body2",
+      "role": "tone",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 987.75,
+      "env": {
+        "a": 0.002,
+        "h": 0.0,
+        "d": 0.8,
+        "dc": 2.5
+      },
+      "gain": 0.3,
+      "delay": 0.11
+    }
+  ]
+}

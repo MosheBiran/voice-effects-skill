@@ -1,0 +1,62 @@
+{
+  "id": "zap",
+  "family": "glitch",
+  "name": "Zap",
+  "he": "זאפ",
+  "use": "Sci-fi/tech hit, energy beam, screen turning on/off, quick futuristic accent.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.4,
+    "hint": "longer, lower beam",
+    "time": 1.3,
+    "pitch": -4,
+    "low_db": 5
+  },
+  "space": {
+    "size": 0.8,
+    "mix": 0.15,
+    "damp": 0.3
+  },
+  "layers": [
+    {
+      "name": "beam",
+      "role": "body",
+      "type": "fm",
+      "f0": 2400,
+      "f1": 110,
+      "ft": 0.28,
+      "fc": 0.5,
+      "ratio": 0.5,
+      "index": 6,
+      "idecay": 0.12,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.32,
+        "dc": 1.6
+      },
+      "gain": 0.8
+    },
+    {
+      "name": "buzz",
+      "role": "tone",
+      "type": "osc",
+      "wave": "saw",
+      "f0": 1200,
+      "f1": 80,
+      "ft": 0.3,
+      "fc": 0.5,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.3
+      },
+      "gain": 0.2
+    }
+  ]
+}

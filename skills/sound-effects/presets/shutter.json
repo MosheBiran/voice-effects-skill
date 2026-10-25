@@ -1,0 +1,88 @@
+{
+  "id": "shutter",
+  "family": "ui",
+  "name": "Camera shutter",
+  "he": "צמצם מצלמה",
+  "use": "Freeze frame, photo/screenshot moment, flash transition, before-photo reveal.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -7,
+    "max": 7
+  },
+  "depth": {
+    "default": 0.4,
+    "hint": "bigger, more mechanical camera body",
+    "time": 1.15,
+    "pitch": -3,
+    "low_db": 5
+  },
+  "space": {
+    "size": 0.4,
+    "mix": 0.08,
+    "damp": 0.4
+  },
+  "layers": [
+    {
+      "name": "clack",
+      "role": "transient",
+      "type": "noise",
+      "color": "white",
+      "filter": {
+        "type": "bandpass",
+        "f0": 4200,
+        "q": 1.0
+      },
+      "env": {
+        "a": 0.0003,
+        "h": 0.0,
+        "d": 0.025
+      },
+      "gain": 1.0,
+      "repeat": {
+        "count": 2,
+        "interval": 0.075,
+        "decay": 0.8
+      }
+    },
+    {
+      "name": "body",
+      "role": "body",
+      "type": "noise",
+      "color": "pink",
+      "filter": {
+        "type": "bandpass",
+        "f0": 900,
+        "q": 1.5
+      },
+      "env": {
+        "a": 0.0005,
+        "h": 0.0,
+        "d": 0.05,
+        "dc": 3
+      },
+      "gain": 0.6,
+      "repeat": {
+        "count": 2,
+        "interval": 0.075,
+        "decay": 0.7
+      }
+    },
+    {
+      "name": "spring",
+      "role": "tone",
+      "type": "osc",
+      "wave": "triangle",
+      "f0": 2400,
+      "f1": 1900,
+      "ft": 0.04,
+      "env": {
+        "a": 0.0005,
+        "h": 0.0,
+        "d": 0.04,
+        "dc": 3
+      },
+      "gain": 0.15
+    }
+  ]
+}

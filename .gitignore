@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+
+# working output of the scripts
+sfx_out/
+sfx_review/
+sfx_plan/
+sfx_plan_review/
+sfx_render/
+*.zip
+
+# media is analysed, never stored
+*.mp4
+*.mov
+*.m4v
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.aac
+*.m4a

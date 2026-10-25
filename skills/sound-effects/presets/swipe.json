@@ -1,0 +1,90 @@
+{
+  "id": "swipe",
+  "family": "whoosh",
+  "name": "Swipe",
+  "he": "סוויפ",
+  "use": "Fast UI/text slide-ins, quick jump cuts, card swipes, list items appearing.",
+  "sync": "peak",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.35,
+    "hint": "fuller and slightly slower swipe",
+    "time": 1.3,
+    "pitch": -3,
+    "low_db": 5
+  },
+  "space": {
+    "size": 0.5,
+    "mix": 0.08,
+    "damp": 0.4
+  },
+  "layers": [
+    {
+      "name": "air",
+      "role": "body",
+      "type": "noise",
+      "color": "white",
+      "filter": {
+        "type": "bandpass",
+        "points": [
+          [
+            0,
+            900
+          ],
+          [
+            0.09,
+            5200
+          ],
+          [
+            0.24,
+            1600
+          ]
+        ],
+        "q": 1.4
+      },
+      "env": {
+        "a": 0.09,
+        "h": 0.0,
+        "d": 0.15,
+        "ac": 1.8
+      },
+      "gain": 1.0,
+      "pan": -0.6,
+      "pan_to": 0.6
+    },
+    {
+      "name": "low",
+      "role": "sub",
+      "type": "noise",
+      "color": "pink",
+      "filter": {
+        "type": "lowpass",
+        "points": [
+          [
+            0,
+            300
+          ],
+          [
+            0.09,
+            1500
+          ],
+          [
+            0.24,
+            400
+          ]
+        ]
+      },
+      "env": {
+        "a": 0.09,
+        "h": 0.0,
+        "d": 0.15,
+        "ac": 1.8
+      },
+      "gain": 0.35
+    }
+  ]
+}

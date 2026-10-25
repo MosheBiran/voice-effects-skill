@@ -1,0 +1,87 @@
+{
+  "id": "reverse_swell",
+  "family": "riser",
+  "name": "Reverse swell",
+  "he": "סוול הפוך",
+  "use": "Sucking into a cut, dreamy transition, lead-in to a title, reverse-cymbal before a hit.",
+  "sync": "peak",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.5,
+    "hint": "longer swell, more low 'suck', bigger space",
+    "time": 1.3,
+    "pitch": -2,
+    "low_db": 7
+  },
+  "space": {
+    "size": 1.4,
+    "mix": 0.25,
+    "damp": 0.5
+  },
+  "layers": [
+    {
+      "name": "cymbal",
+      "role": "body",
+      "type": "noise",
+      "color": "white",
+      "stereo": true,
+      "filter": [
+        {
+          "type": "highpass",
+          "f0": 2500,
+          "q": 0.8
+        },
+        {
+          "type": "lowpass",
+          "f0": 14000
+        }
+      ],
+      "env": {
+        "a": 0.002,
+        "h": 0.0,
+        "d": 1.8,
+        "dc": 2.5
+      },
+      "gain": 0.8,
+      "reverse": true
+    },
+    {
+      "name": "shimmer",
+      "role": "tone",
+      "type": "fm",
+      "f0": 900,
+      "ratio": 3.1,
+      "index": 2.0,
+      "idecay": 0.6,
+      "env": {
+        "a": 0.002,
+        "h": 0.0,
+        "d": 1.6,
+        "dc": 2.5
+      },
+      "gain": 0.18,
+      "reverse": true
+    },
+    {
+      "name": "suck",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 95,
+      "f1": 45,
+      "ft": 1.0,
+      "env": {
+        "a": 0.002,
+        "h": 0.0,
+        "d": 1.5,
+        "dc": 2.2
+      },
+      "gain": 0.5,
+      "reverse": true
+    }
+  ]
+}

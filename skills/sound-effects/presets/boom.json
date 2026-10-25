@@ -1,0 +1,103 @@
+{
+  "id": "boom",
+  "family": "impact",
+  "name": "Trailer boom",
+  "he": "בום טריילר",
+  "use": "Opening hook, dramatic title card, slow-motion reveal, end card.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 5
+  },
+  "depth": {
+    "default": 0.75,
+    "hint": "longer, darker, enormous room",
+    "time": 1.35,
+    "pitch": -2,
+    "low_db": 11
+  },
+  "space": {
+    "size": 3.2,
+    "mix": 0.42,
+    "damp": 0.7
+  },
+  "drive": 0.25,
+  "layers": [
+    {
+      "name": "sub",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 70,
+      "f1": 30,
+      "ft": 1.2,
+      "fc": 0.6,
+      "env": {
+        "a": 0.004,
+        "h": 0.1,
+        "d": 3.0
+      },
+      "gain": 1.0,
+      "drive": 0.3
+    },
+    {
+      "name": "body",
+      "role": "body",
+      "type": "noise",
+      "color": "brown",
+      "stereo": true,
+      "filter": {
+        "type": "lowpass",
+        "f0": 1200,
+        "f1": 90,
+        "ft": 1.5,
+        "fc": 0.5,
+        "q": 0.8
+      },
+      "env": {
+        "a": 0.003,
+        "h": 0.05,
+        "d": 2.2,
+        "dc": 2.5
+      },
+      "gain": 0.8
+    },
+    {
+      "name": "thump",
+      "role": "body",
+      "type": "osc",
+      "wave": "triangle",
+      "f0": 110,
+      "f1": 45,
+      "ft": 0.2,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.6,
+        "dc": 3
+      },
+      "gain": 0.4
+    },
+    {
+      "name": "tail",
+      "role": "tail",
+      "type": "noise",
+      "color": "pink",
+      "stereo": true,
+      "filter": {
+        "type": "bandpass",
+        "f0": 300,
+        "f1": 80,
+        "ft": 3.0,
+        "q": 0.5
+      },
+      "env": {
+        "a": 0.05,
+        "h": 0.1,
+        "d": 3.5
+      },
+      "gain": 0.35
+    }
+  ]
+}

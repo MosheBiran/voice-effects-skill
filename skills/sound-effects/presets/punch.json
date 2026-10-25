@@ -1,0 +1,83 @@
+{
+  "id": "punch",
+  "family": "impact",
+  "name": "Punch hit",
+  "he": "פאנץ' קצר",
+  "use": "Text slam, quick emphasis on a word, fast-paced cuts, number reveal.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.45,
+    "hint": "heavier low end, slightly longer body",
+    "time": 1.2,
+    "pitch": -2,
+    "low_db": 8
+  },
+  "space": {
+    "size": 0.6,
+    "mix": 0.12,
+    "damp": 0.5
+  },
+  "drive": 0.18,
+  "layers": [
+    {
+      "name": "sub",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 170,
+      "f1": 55,
+      "ft": 0.08,
+      "fc": 0.5,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.28,
+        "dc": 3
+      },
+      "gain": 1.0,
+      "drive": 0.15
+    },
+    {
+      "name": "body",
+      "role": "body",
+      "type": "noise",
+      "color": "pink",
+      "filter": {
+        "type": "lowpass",
+        "f0": 5000,
+        "f1": 600,
+        "ft": 0.1,
+        "q": 0.8
+      },
+      "env": {
+        "a": 0.0005,
+        "h": 0.0,
+        "d": 0.15,
+        "dc": 3
+      },
+      "gain": 0.6
+    },
+    {
+      "name": "crack",
+      "role": "transient",
+      "type": "noise",
+      "color": "white",
+      "filter": {
+        "type": "highpass",
+        "f0": 2500,
+        "q": 0.7
+      },
+      "env": {
+        "a": 0.0003,
+        "h": 0.002,
+        "d": 0.03
+      },
+      "gain": 0.5
+    }
+  ]
+}

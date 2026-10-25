@@ -1,0 +1,61 @@
+{
+  "id": "pop",
+  "family": "ui",
+  "name": "Pop",
+  "he": "פופ",
+  "use": "Text/sticker/emoji popping in, bubble, lower-third appearing, playful accent.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.35,
+    "hint": "rounder, lower bubble",
+    "time": 1.25,
+    "pitch": -4,
+    "low_db": 5
+  },
+  "space": {
+    "size": 0.4,
+    "mix": 0.08,
+    "damp": 0.4
+  },
+  "layers": [
+    {
+      "name": "bubble",
+      "role": "body",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 320,
+      "f1": 950,
+      "ft": 0.045,
+      "fc": 0.8,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.09,
+        "dc": 2.5
+      },
+      "gain": 1.0
+    },
+    {
+      "name": "snap",
+      "role": "transient",
+      "type": "noise",
+      "color": "pink",
+      "filter": {
+        "type": "bandpass",
+        "f0": 2500,
+        "q": 1.2
+      },
+      "env": {
+        "a": 0.0003,
+        "h": 0.0,
+        "d": 0.015
+      },
+      "gain": 0.35
+    }
+  ]
+}

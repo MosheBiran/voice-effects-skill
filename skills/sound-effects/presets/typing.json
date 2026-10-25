@@ -1,0 +1,72 @@
+{
+  "id": "typing",
+  "family": "ui",
+  "name": "Typing ticks",
+  "he": "הקלדה",
+  "use": "Text appearing letter by letter, counters, captions typing on, data/stat build-ups.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.3,
+    "hint": "heavier keys, more mechanical body",
+    "time": 1.1,
+    "pitch": -3,
+    "low_db": 4
+  },
+  "space": {
+    "size": 0.3,
+    "mix": 0.06,
+    "damp": 0.4
+  },
+  "layers": [
+    {
+      "name": "key",
+      "role": "transient",
+      "type": "noise",
+      "color": "white",
+      "filter": {
+        "type": "bandpass",
+        "f0": 2600,
+        "q": 1.5
+      },
+      "env": {
+        "a": 0.0003,
+        "h": 0.0,
+        "d": 0.018
+      },
+      "gain": 1.0,
+      "repeat": {
+        "count": 7,
+        "interval": 0.085,
+        "decay": 0.97,
+        "jitter": 0.35
+      }
+    },
+    {
+      "name": "thock",
+      "role": "body",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 420,
+      "f1": 260,
+      "ft": 0.02,
+      "env": {
+        "a": 0.0005,
+        "h": 0.0,
+        "d": 0.03,
+        "dc": 3
+      },
+      "gain": 0.3,
+      "repeat": {
+        "count": 7,
+        "interval": 0.085,
+        "decay": 0.97,
+        "jitter": 0.35
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "voice-effects-skill",
+  "owner": {
+    "name": "MosheBiran"
+  },
+  "description": "Sound-effect generation, SFX learning from creators' videos and SFX placement for video editing.",
+  "plugins": [
+    {
+      "name": "sound-effects",
+      "source": "./",
+      "description": "Layered sound-effect generator with effect-aware pitch and depth, learning of SFX timing from creators' videos, and synced SFX planning and rendering for your own edits.",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "shimmer",
+  "family": "chime",
+  "name": "Shimmer sparkle",
+  "he": "נצנוץ",
+  "use": "Magic/clean result, 'new' and shiny, finished renovation, sparkle on a highlight.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.4,
+    "hint": "longer, wider sparkle tail",
+    "time": 1.35,
+    "pitch": 0,
+    "low_db": 2
+  },
+  "space": {
+    "size": 1.8,
+    "mix": 0.38,
+    "damp": 0.2
+  },
+  "width": 1.2,
+  "echo": {
+    "time": 0.14,
+    "fb": 0.35,
+    "mix": 0.25
+  },
+  "layers": [
+    {
+      "name": "arp",
+      "role": "tone",
+      "type": "osc",
+      "wave": "triangle",
+      "f0": 2093,
+      "lfo": [
+        {
+          "target": "freq",
+          "shape": "random",
+          "rate": 16,
+          "depth": 12,
+          "smooth": 0.0
+        },
+        {
+          "target": "amp",
+          "shape": "square",
+          "rate": 16,
+          "depth": 0.95,
+          "duty": 0.35
+        }
+      ],
+      "env": {
+        "a": 0.01,
+        "h": 0.0,
+        "d": 1.1,
+        "dc": 1.8
+      },
+      "gain": 0.5,
+      "pan": -0.4,
+      "pan_to": 0.4
+    },
+    {
+      "name": "dust",
+      "role": "air",
+      "type": "dust",
+      "density": 80,
+      "filter": {
+        "type": "highpass",
+        "f0": 5000
+      },
+      "env": {
+        "a": 0.05,
+        "h": 0.0,
+        "d": 1.2
+      },
+      "gain": 0.5,
+      "normalize": false
+    },
+    {
+      "name": "air",
+      "role": "air",
+      "type": "noise",
+      "color": "white",
+      "filter": {
+        "type": "highpass",
+        "f0": 7000
+      },
+      "env": {
+        "a": 0.2,
+        "h": 0.0,
+        "d": 1.0,
+        "ac": 1.5,
+        "dc": 2.5
+      },
+      "gain": 0.12
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "rumble",
+  "family": "texture",
+  "name": "Rumble",
+  "he": "רעם / רעידה",
+  "use": "Earthquake, demolition, heavy machinery, storm, building collapse or construction shake.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 7
+  },
+  "depth": {
+    "default": 0.6,
+    "hint": "deeper, longer, bigger space",
+    "time": 1.3,
+    "pitch": -3,
+    "low_db": 10
+  },
+  "space": {
+    "size": 2.5,
+    "mix": 0.35,
+    "damp": 0.7
+  },
+  "layers": [
+    {
+      "name": "rumble",
+      "role": "sub",
+      "type": "noise",
+      "color": "brown",
+      "stereo": true,
+      "filter": {
+        "type": "lowpass",
+        "f0": 260,
+        "q": 0.7
+      },
+      "lfo": {
+        "target": "amp",
+        "shape": "random",
+        "rate": 7,
+        "depth": 0.6,
+        "smooth": 0.04
+      },
+      "env": {
+        "a": 0.25,
+        "h": 0.3,
+        "d": 2.8,
+        "dc": 1.8
+      },
+      "gain": 1.0
+    },
+    {
+      "name": "crackle",
+      "role": "air",
+      "type": "dust",
+      "density": 60,
+      "filter": {
+        "type": "lowpass",
+        "f0": 2500
+      },
+      "env": {
+        "a": 0.1,
+        "h": 0.0,
+        "d": 2.0
+      },
+      "gain": 0.5,
+      "normalize": false
+    },
+    {
+      "name": "body",
+      "role": "body",
+      "type": "noise",
+      "color": "pink",
+      "filter": {
+        "type": "bandpass",
+        "f0": 500,
+        "q": 0.6
+      },
+      "lfo": {
+        "target": "amp",
+        "shape": "random",
+        "rate": 5,
+        "depth": 0.5,
+        "smooth": 0.05
+      },
+      "env": {
+        "a": 0.2,
+        "h": 0.0,
+        "d": 2.2
+      },
+      "gain": 0.35
+    }
+  ]
+}

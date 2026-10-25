@@ -1,0 +1,71 @@
+{
+  "id": "heartbeat",
+  "family": "texture",
+  "name": "Heartbeat",
+  "he": "דופק",
+  "use": "Suspense, waiting for a reveal, tension under a voice-over, 'will it work?' moment.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -7,
+    "max": 7
+  },
+  "depth": {
+    "default": 0.6,
+    "hint": "heavier, slower beat",
+    "time": 1.2,
+    "pitch": -2,
+    "low_db": 9
+  },
+  "space": {
+    "size": 0.8,
+    "mix": 0.12,
+    "damp": 0.6
+  },
+  "layers": [
+    {
+      "name": "thump",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 75,
+      "f1": 42,
+      "ft": 0.08,
+      "env": {
+        "a": 0.004,
+        "h": 0.0,
+        "d": 0.22,
+        "dc": 2.5
+      },
+      "gain": 1.0,
+      "drive": 0.3,
+      "repeat": {
+        "count": 2,
+        "interval": 0.27,
+        "decay": 0.72
+      }
+    },
+    {
+      "name": "skin",
+      "role": "body",
+      "type": "noise",
+      "color": "brown",
+      "filter": {
+        "type": "lowpass",
+        "f0": 350
+      },
+      "env": {
+        "a": 0.003,
+        "h": 0.0,
+        "d": 0.12,
+        "dc": 3
+      },
+      "gain": 0.4,
+      "repeat": {
+        "count": 2,
+        "interval": 0.27,
+        "decay": 0.72
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "metal_hit",
+  "family": "impact",
+  "name": "Metal hit",
+  "he": "מכת מתכת",
+  "use": "Industrial/construction shots, mechanical motion, steel structure, tense stinger.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.5,
+    "hint": "heavier metal, longer ring, bigger hall",
+    "time": 1.3,
+    "pitch": -3,
+    "low_db": 7
+  },
+  "space": {
+    "size": 1.6,
+    "mix": 0.3,
+    "damp": 0.3
+  },
+  "drive": 0.15,
+  "layers": [
+    {
+      "name": "ring1",
+      "role": "tone",
+      "type": "fm",
+      "f0": 420,
+      "ratio": 2.76,
+      "index": 3.5,
+      "idecay": 0.4,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 1.6,
+        "dc": 2.5
+      },
+      "gain": 0.5
+    },
+    {
+      "name": "ring2",
+      "role": "tone",
+      "type": "fm",
+      "f0": 640,
+      "ratio": 1.414,
+      "index": 2.0,
+      "idecay": 0.3,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 1.1,
+        "dc": 2.5
+      },
+      "gain": 0.35,
+      "pan": -0.3
+    },
+    {
+      "name": "ring3",
+      "role": "tone",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 1830,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.8,
+        "dc": 3
+      },
+      "gain": 0.15,
+      "pan": 0.3
+    },
+    {
+      "name": "sub",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 90,
+      "f1": 50,
+      "ft": 0.1,
+      "env": {
+        "a": 0.001,
+        "h": 0.0,
+        "d": 0.5,
+        "dc": 3
+      },
+      "gain": 0.6
+    },
+    {
+      "name": "crack",
+      "role": "transient",
+      "type": "noise",
+      "color": "white",
+      "filter": {
+        "type": "bandpass",
+        "f0": 3500,
+        "q": 0.8
+      },
+      "env": {
+        "a": 0.0003,
+        "h": 0.0,
+        "d": 0.05
+      },
+      "gain": 0.6
+    },
+    {
+      "name": "tail",
+      "role": "tail",
+      "type": "noise",
+      "color": "pink",
+      "filter": {
+        "type": "bandpass",
+        "f0": 2000,
+        "q": 2.0
+      },
+      "env": {
+        "a": 0.005,
+        "h": 0.0,
+        "d": 1.2
+      },
+      "gain": 0.15
+    }
+  ]
+}

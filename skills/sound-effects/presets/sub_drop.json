@@ -1,0 +1,79 @@
+{
+  "id": "sub_drop",
+  "family": "sub_drop",
+  "name": "Sub drop",
+  "he": "סאב דרופ",
+  "use": "Bass drop after a build, entering a new section, heavy mood shift, slow-mo moment.",
+  "sync": "onset",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 7
+  },
+  "depth": {
+    "default": 0.6,
+    "hint": "lower, longer drop with more weight",
+    "time": 1.35,
+    "pitch": -3,
+    "low_db": 9
+  },
+  "space": {
+    "size": 1.0,
+    "mix": 0.1,
+    "damp": 0.6
+  },
+  "drive": 0.2,
+  "layers": [
+    {
+      "name": "sub",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 110,
+      "f1": 28,
+      "ft": 1.4,
+      "fc": 0.7,
+      "env": {
+        "a": 0.005,
+        "h": 0.1,
+        "d": 1.9,
+        "dc": 1.6
+      },
+      "gain": 1.0,
+      "drive": 0.35
+    },
+    {
+      "name": "harm",
+      "role": "body",
+      "type": "osc",
+      "wave": "triangle",
+      "f0": 220,
+      "f1": 56,
+      "ft": 1.4,
+      "fc": 0.7,
+      "env": {
+        "a": 0.005,
+        "h": 0.05,
+        "d": 1.2,
+        "dc": 2.5
+      },
+      "gain": 0.25
+    },
+    {
+      "name": "click",
+      "role": "transient",
+      "type": "noise",
+      "color": "pink",
+      "filter": {
+        "type": "lowpass",
+        "f0": 4000
+      },
+      "env": {
+        "a": 0.0005,
+        "h": 0.002,
+        "d": 0.03
+      },
+      "gain": 0.3
+    }
+  ]
+}

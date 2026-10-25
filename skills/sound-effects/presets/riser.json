@@ -1,0 +1,102 @@
+{
+  "id": "riser",
+  "family": "riser",
+  "name": "Riser",
+  "he": "רייזר",
+  "use": "Build-up before a reveal or drop, tension before the cut, countdown to the hook payoff.",
+  "sync": "peak",
+  "pitch": {
+    "default": 0,
+    "min": -7,
+    "max": 7
+  },
+  "depth": {
+    "default": 0.55,
+    "hint": "longer build that starts lower, with more sub",
+    "time": 1.3,
+    "pitch": -3,
+    "low_db": 7
+  },
+  "space": {
+    "size": 1.8,
+    "mix": 0.3,
+    "damp": 0.5
+  },
+  "layers": [
+    {
+      "name": "saw",
+      "role": "tone",
+      "type": "osc",
+      "wave": "saw",
+      "voices": 5,
+      "detune": 35,
+      "spread": 0.9,
+      "f0": 160,
+      "f1": 640,
+      "ft": 3.0,
+      "fc": 1.6,
+      "filter": {
+        "type": "lowpass",
+        "f0": 500,
+        "f1": 9000,
+        "ft": 3.0,
+        "fc": 1.4,
+        "q": 1.2
+      },
+      "env": {
+        "a": 2.9,
+        "h": 0.0,
+        "d": 0.08,
+        "ac": 2.0,
+        "dc": 1.0
+      },
+      "gain": 0.5
+    },
+    {
+      "name": "noise",
+      "role": "air",
+      "type": "noise",
+      "color": "white",
+      "stereo": true,
+      "filter": {
+        "type": "highpass",
+        "f0": 400,
+        "f1": 5000,
+        "ft": 3.0,
+        "fc": 1.5,
+        "q": 0.9
+      },
+      "lfo": {
+        "target": "amp",
+        "rate": 3,
+        "to": 16,
+        "depth": 0.4
+      },
+      "env": {
+        "a": 2.9,
+        "h": 0.0,
+        "d": 0.06,
+        "ac": 2.4,
+        "dc": 1.0
+      },
+      "gain": 0.6
+    },
+    {
+      "name": "sub",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 55,
+      "f1": 82,
+      "ft": 3.0,
+      "env": {
+        "a": 2.8,
+        "h": 0.0,
+        "d": 0.1,
+        "ac": 1.5,
+        "dc": 1.0
+      },
+      "gain": 0.45
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "id": "reveal",
+  "family": "impact",
+  "name": "Riser into impact",
+  "he": "בילד-אפ לאימפקט",
+  "use": "Before/after transformation, product reveal, the big 'wow' moment. The hit lands on the cut.",
+  "sync": "hit",
+  "pitch": {
+    "default": 0,
+    "min": -7,
+    "max": 7
+  },
+  "depth": {
+    "default": 0.65,
+    "hint": "longer build, bigger and deeper hit",
+    "time": 1.2,
+    "pitch": -2,
+    "low_db": 10
+  },
+  "space": {
+    "size": 2.2,
+    "mix": 0.32,
+    "damp": 0.55
+  },
+  "drive": 0.18,
+  "layers": [
+    {
+      "name": "build",
+      "role": "tone",
+      "type": "osc",
+      "wave": "saw",
+      "voices": 5,
+      "detune": 35,
+      "spread": 0.9,
+      "f0": 180,
+      "f1": 720,
+      "ft": 2.0,
+      "fc": 1.6,
+      "filter": {
+        "type": "lowpass",
+        "f0": 500,
+        "f1": 9000,
+        "ft": 2.0,
+        "fc": 1.4,
+        "q": 1.2
+      },
+      "env": {
+        "a": 1.95,
+        "h": 0.0,
+        "d": 0.05,
+        "ac": 2.2,
+        "dc": 1.0
+      },
+      "gain": 0.35
+    },
+    {
+      "name": "air",
+      "role": "air",
+      "type": "noise",
+      "color": "white",
+      "stereo": true,
+      "filter": {
+        "type": "highpass",
+        "f0": 400,
+        "f1": 5000,
+        "ft": 2.0,
+        "fc": 1.5
+      },
+      "lfo": {
+        "target": "amp",
+        "rate": 4,
+        "to": 18,
+        "depth": 0.35
+      },
+      "env": {
+        "a": 1.95,
+        "h": 0.0,
+        "d": 0.04,
+        "ac": 2.4,
+        "dc": 1.0
+      },
+      "gain": 0.45
+    },
+    {
+      "name": "sub",
+      "role": "sub",
+      "type": "osc",
+      "wave": "sine",
+      "f0": 90,
+      "f1": 32,
+      "ft": 0.45,
+      "fc": 0.6,
+      "env": {
+        "a": 0.002,
+        "h": 0.04,
+        "d": 1.6,
+        "dc": 2.6
+      },
+      "gain": 1.0,
+      "drive": 0.25,
+      "delay": 2.0
+    },
+    {
+      "name": "body",
+      "role": "body",
+      "type": "noise",
+      "color": "brown",
+      "filter": {
+        "type": "lowpass",
+        "f0": 3200,
+        "f1": 160,
+        "ft": 0.5,
+        "fc": 0.5,
+        "q": 0.9
+      },
+      "env": {
+        "a": 0.001,
+        "h": 0.01,
+        "d": 0.9,
+        "dc": 3.5
+      },
+      "gain": 0.8,
+      "delay": 2.0
+    },
+    {
+      "name": "crack",
+      "role": "transient",
+      "type": "noise",
+      "color": "white",
+      "filter": {
+        "type": "highpass",
+        "f0": 1500
+      },
+      "env": {
+        "a": 0.0003,
+        "h": 0.003,
+        "d": 0.08,
+        "dc": 2.5
+      },
+      "gain": 0.65,
+      "delay": 2.0
+    },
+    {
+      "name": "tail",
+      "role": "tail",
+      "type": "noise",
+      "color": "pink",
+      "stereo": true,
+      "filter": {
+        "type": "bandpass",
+        "f0": 600,
+        "f1": 150,
+        "ft": 1.8,
+        "q": 0.5
+      },
+      "env": {
+        "a": 0.02,
+        "h": 0.05,
+        "d": 2.4,
+        "dc": 2.2
+      },
+      "gain": 0.3,
+      "delay": 2.01
+    }
+  ]
+}

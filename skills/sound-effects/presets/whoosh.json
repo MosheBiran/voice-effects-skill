@@ -1,0 +1,141 @@
+{
+  "id": "whoosh",
+  "family": "whoosh",
+  "name": "Whoosh",
+  "he": "ווש",
+  "use": "Transitions between shots, camera whip/pan, object flying past, slide-in graphics.",
+  "sync": "peak",
+  "pitch": {
+    "default": 0,
+    "min": -12,
+    "max": 12
+  },
+  "depth": {
+    "default": 0.5,
+    "hint": "slower, lower, heavier air",
+    "time": 1.35,
+    "pitch": -4,
+    "low_db": 7
+  },
+  "space": {
+    "size": 1.0,
+    "mix": 0.15,
+    "damp": 0.5
+  },
+  "width": 1.0,
+  "layers": [
+    {
+      "name": "air",
+      "role": "body",
+      "type": "noise",
+      "color": "white",
+      "filter": {
+        "type": "bandpass",
+        "points": [
+          [
+            0,
+            450
+          ],
+          [
+            0.36,
+            2600
+          ],
+          [
+            0.85,
+            600
+          ]
+        ],
+        "q": 1.1
+      },
+      "env": {
+        "a": 0.36,
+        "h": 0.02,
+        "d": 0.48,
+        "ac": 2.0,
+        "dc": 1.8
+      },
+      "gain": 1.0,
+      "pan": -0.8,
+      "pan_to": 0.8
+    },
+    {
+      "name": "low",
+      "role": "sub",
+      "type": "noise",
+      "color": "pink",
+      "filter": {
+        "type": "lowpass",
+        "points": [
+          [
+            0,
+            180
+          ],
+          [
+            0.36,
+            900
+          ],
+          [
+            0.85,
+            220
+          ]
+        ],
+        "q": 0.8
+      },
+      "env": {
+        "a": 0.36,
+        "h": 0.02,
+        "d": 0.48,
+        "ac": 2.0,
+        "dc": 1.8
+      },
+      "gain": 0.45,
+      "pan": -0.5,
+      "pan_to": 0.5
+    },
+    {
+      "name": "hiss",
+      "role": "air",
+      "type": "noise",
+      "color": "blue",
+      "filter": {
+        "type": "highpass",
+        "f0": 5000,
+        "q": 0.7
+      },
+      "env": {
+        "a": 0.34,
+        "h": 0.0,
+        "d": 0.2,
+        "ac": 2.5,
+        "dc": 2.5
+      },
+      "gain": 0.25,
+      "pan": -0.6,
+      "pan_to": 0.6
+    },
+    {
+      "name": "doppler",
+      "role": "tone",
+      "type": "osc",
+      "wave": "saw",
+      "voices": 3,
+      "detune": 30,
+      "f0": 420,
+      "f1": 300,
+      "ft": 0.8,
+      "fc": 0.8,
+      "filter": {
+        "type": "lowpass",
+        "f0": 1500,
+        "q": 0.7
+      },
+      "env": {
+        "a": 0.36,
+        "h": 0.0,
+        "d": 0.45,
+        "ac": 2.0
+      },
+      "gain": 0.06
+    }
+  ]
+}
